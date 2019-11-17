@@ -1,0 +1,105 @@
+// Design made with canva.com
+
+$dark: #333;
+$blue: #16affa;
+$serif: 'Source Serif Pro', serif;
+$sans: 'Source Sans Pro', sans-serif;
+
+@mixin big() {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $dark;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: white;
+  display: flex;
+  height: 100vh;
+}
+
+.selection {
+  background-color: $dark;
+  height: inherit;
+  position: relative;
+  width: 50%;
+  .round {
+    position: absolute;
+    margin-top: -50px;
+    top: 50%;
+
+    p {
+      @include big();
+      background-color: $blue;
+      color: white;
+      display: inline-block;
+      font-family: $sans;
+      line-height: 100px;
+      padding: 0 30px;
+      text-align: center;
+    }
+  }
+
+  .choices {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: space-around;
+    text-align: center;
+
+    button {
+      @include big();
+      background-color: $dark;
+      border: 1px solid $dark;
+      color: white;
+      font-family: $serif;
+      text-align: center;
+      width: 350px;
+      &:hover {
+        border-color: #d9d9d9;
+      }
+      &:active {
+        border-color: white;
+      }
+    }
+  }
+}
+
+.txt-board-wrap {
+  background-color: white;
+  border: 2px solid $dark;
+  margin: 70px 100px 70px -2px;
+  width: 50%;
+
+  .txt-board {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    padding: 100px;
+    color: $dark;
+
+    .score {
+      @include big();
+      color: #545454;
+      display: none;
+      font-family: $sans;
+    }
+
+    .msg {
+      font-family: $serif;
+      font-size: 30px;
+      font-weight: normal;
+      line-height: 40px;
+      padding-right: 70px;
+    }
+  }
+}
